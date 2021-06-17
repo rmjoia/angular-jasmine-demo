@@ -1,0 +1,10 @@
+<ng-container *ngFor="let person of people; index as i">
+  <h1>Hello {{person?.name}}!!</h1>
+  <h3 *ngIf="person?.numberOfMessages; else noMessages">
+    You have {{person?.numberOfMessages}} messages!
+  </h3>
+  <ng-template #noMessages>
+    <h3>You have no messages</h3>
+  </ng-template>
+  <button (click)="doSomething(i)">Click me!</button>
+</ng-container>

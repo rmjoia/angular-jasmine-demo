@@ -25,12 +25,26 @@ module.exports = function (config) {
       suppressAll: true // removes the duplicated traces
     },
     coverageReporter: {
+      check: {
+        global: {
+          statements: 75,
+          branches: 100,
+          functions: 50,
+          lines: 65,
+        },
+      },
+      watermarks: {
+        statements: [50, 75],
+        functions: [50, 75],
+        branches: [50, 75],
+        lines: [50, 75]
+      },
       dir: require('path').join(__dirname, './coverage/test'),
       subdir: '.',
       reporters: [
         { type: 'html' },
         { type: 'text-summary' }
-      ]
+      ],
     },
     reporters: ['progress', 'kjhtml'],
     port: 9876,

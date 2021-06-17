@@ -8,10 +8,17 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'test';
 
-  /**
-   *
-   */
+  people = [
+    { name: 'Zeca Banguma', numberOfMessages: 55 },
+    { name: 'Zezinho', numberOfMessages: 0 },
+    { name: 'Luizinho', numberOfMessages: 20 }
+  ];
+
   constructor() {
 
+  }
+
+  onGreet(name: string) {
+    window.alert(`hellooooo ${name}!`);
   }
 }
