@@ -7,7 +7,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "test": {
+    "angular-jasmine-demo": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -21,7 +21,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/test",
+            "outputPath": "dist/angular-jasmine-demo",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -72,10 +72,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "test:build:production"
+              "browserTarget": "angular-jasmine-demo:build:production"
             },
             "development": {
-              "browserTarget": "test:build:development"
+              "browserTarget": "angular-jasmine-demo:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -83,7 +83,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "test:build"
+            "browserTarget": "angular-jasmine-demo:build"
           }
         },
         "test": {
@@ -106,11 +106,11 @@
         "cypress-run": {
           "builder": "@cypress/schematic:cypress",
           "options": {
-            "devServerTarget": "test:serve"
+            "devServerTarget": "angular-jasmine-demo:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "test:serve:production"
+              "devServerTarget": "angular-jasmine-demo:serve:production"
             }
           }
         },
@@ -124,13 +124,13 @@
         "e2e": {
           "builder": "@cypress/schematic:cypress",
           "options": {
-            "devServerTarget": "test:serve",
+            "devServerTarget": "angular-jasmine-demo:serve",
             "watch": true,
             "headless": false
           },
           "configurations": {
             "production": {
-              "devServerTarget": "test:serve:production"
+              "devServerTarget": "angular-jasmine-demo:serve:production"
             }
           }
         },
@@ -146,5 +146,5 @@
       }
     }
   },
-  "defaultProject": "test"
+  "defaultProject": "angular-jasmine-demo"
 }
